@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --bg-color: #27ae60;
+    --bg-color2: #f0f0f0;
+    --text-color: blue;
+    --container-width-lg: 80%;
+}
+.container{
+    width: var(--container-width-lg);
+}
+li{
+    list-style: none;
+}
+a{text-decoration: none;}
+
+
+.container-layer{
+    background: url('images/dev1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    top: 0;
+    background: var(--bg-color2);
+    z-index: 1;
+
+}
+nav ul li{
+    display: inline-block;
+    padding: 30px;
+    
+}
+nav ul li a{
+    color: var(--bg-color);
+    font-size: 1.1;
+
+}
+nav ul li a:hover{
+    color: black
+}
+nav ul li a:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    transition: .4s;
+    background:#27ae60;
+
+}
+nav ul li a:hover:after{
+    width: 100%;
+}
+.logo{
+    color: var(--bg-color);
+    font-size: 1.5;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn{
+    padding: 10px;
+    width: 100px;
+    background: var(--bg-color);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn:hover{
+    background: transparent;
+    border: 2px solid #27ae60;
+    color:#27ae60;
+}
+
+/* HOME */
+
+.content{
+    padding-top: 23%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 50%;
+    line-height: 1.5rem;
+    color: white;
+}
+.content h2{
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.content p{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #cccc;
+
+}
+.content button{
+    padding: 10px;
+    width: 100px;
+    background: var(--bg-color);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 100px;
+
+}
+/* 
+ABOUT-SECTION */
+
+#about{
+    padding: 20px 30px;
+    background: #f0f0f0;
+}
+#about h1{
+    font-size:2.4rem;
+    text-align: center;
+    font-weight: 700;
+
+}
+.row{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.letf-row{
+    flex-basis: 40%;
+    padding-top: 10%;
+   
+
+}
+.letf-row img{
+    border-radius: 10px;
+}
+.right-row{
+    flex-basis: 60%;
+}
+
+letf-row,  .right-row p{
+    padding: 120px 50%;
+    width: 210%;
+    line-height: 1.8rem;
+}
+/* 
+SERVICE-SECTION */
+
+#section-one{
+    margin: 20px 30px;
+
+}
+#section-one h1{
+    font-size: 2.5rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 35px;
+
+}
+.image{
+    position: relative;
+    width: 20px;
+
+}
+.img-container{
+    width: 200px;
+
+}
+.overlay-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+}
+.overlay-container:hover{
+    opacity: 1;
+}
+
+
+
+/* FORM CSS */
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+
+}
+.overlay:hover{
+    opacity: 1;
+}
+ 
+
+#service-section img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+}
+.overlay-container:hover{
+    opacity: 1;
+}
+
+    
+       /* Model for form section */ 
+       #model{
+        display: none;
+        position: fixed;
+        top:0;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0,0,0,0.5);
+        transition: .4s ease;
+
+       }
+
+
+       .model-content{
+        margin: 40px 80px;
+        background: white;
+        width: 70%;
+        height: 90%;
+        padding: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+        border-radius: 5px;
+
+
+       }
+       .close-btn{
+        float: right;
+        font-size: 2rem;
+        color: red;
+        cursor: pointer;
+       }
+
+       .close-btn:hover{
+        color:#f0f0f0;
+       }
+
+       /* SIGN UP FORM */
+
+
+       form{
+        border: 2px solid #f0f0f0;
+        width: 80%;
+        margin-left: 20px;
+        padding: 10px;
+       
+       }
+
+       .model-content h2{
+        font-size: 2rem;
+        color: green;
+        margin-bottom: 20px;
+        text-align: center;
+        
+
+       }
+        input, textarea{
+        padding: 10px;
+        width: 90%;
+        box-sizing: border-box;
+        margin: 20px 30px;
+        background: #f0f0f0;
+        border: none;
+        outline: none;
+
+       }
+       
+       .up-btn{
+        padding: 10px;
+        width: 80%;
+        background:#27ae60;
+        border: none;
+        color: white;
+        margin-top: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+
+       }
+       .contact-row{
+        width: 100%;
+        margin: 50px;
+        display: flex;
+       }
+       .contact-row h2{
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+       }
+       .right-contact{
+        flex-basis: 80%;
+       }
+       .left-contact{
+        flex-basis: 30%;
+       }
+
+
+        
+       /* SERVICE-ZONE */
+       #service{
+        width: 100%;
+        margin-top: 8%;
+        
+
+       }
+       #service h1{
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 5%;
+
+
+       }
+       .overlay-cont{
+        position: relative;
+        width: 330px;
+       }
+       .overlay-cont img{
+        width: 100%;
+        border-radius: 5px;
+       }
+       .fix-all{
+        display: flex;
+        gap: 10px;
+        padding-left: 15px;
+        
+       }
+       .overlay p{
+        text-align: center;
+        line-height: 1em;
+        font-size: 1.8rem;
+       }
+       .overlay h2{
+        font-size: 2rem;
+       }
+
+
+       
+
+       /* FOOTER */
+       
+       footer{
+        display: flex;
+        gap: 10px;
+        margin-top: 60px;
+        width: 100%;
+        background: #130f40;
+       
+       }
+       footer div{
+        margin: 60px 50px;
+        padding-bottom: 20px;
+       }
+       footer div h2{
+        color: white;
+        text-transform: lowercase;
+        font-size: 1.5em;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s ease;
+       }
+       footer div p{
+        text-transform: lowercase;
+        color: white;
+        cursor: pointer;
+
+       }
+       footer div > h2:hover{
+        font-size: 1.6em;
+
+
+       }
+       footer div > p:hover{
+        font-size: 1.6em;
+
+       }
+       footer div h1{
+        margin-top: 33%;
+        text-align: center;
+        color: white;
+        font-size: 1em;
+        align-items: center;
+       }
+
+       /* icons */
+       .icon-space{
+        font-size: 1.2rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        border: 1px solid #f0f0f0;
+        text-align: center;
+        border-radius: 15px;
+        margin-top: 35px;
+        align-items: center;
+        cursor: pointer;
+       
+       }
+       .fa-instagram{
+        margin-top: 10px;
+       }
+
+       .fa-instagram:hover{
+        font-size: 1.4rem;
+        transition: .4s;
+        
+       }
+       .fa-facebook:hover{
+        font-size: 1.4rem;
+        transition: .4s;
+       }
+       .fa-square-whatsapp:hover{
+        font-size: 1.4rem;
+        transition: .4s;
+       }
+       .fa-linkedin:hover{
+        font-size: 1.4rem;
+        transition: .2s;
+       }
+
+
+
+
+
